@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    // return Illuminate\Mail\Markdown::parse(file_get_contents(base_path() . '/README.md'));
+    return Illuminate\Support\Str::markdown(file_get_contents(base_path() . '/README.md'));
+
 });
 
 Route::get('/users', function () {
